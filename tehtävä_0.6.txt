@@ -1,0 +1,38 @@
+kayttaja->selain:
+note left of selain
+kayttaja kirjoittaa selaimen osoiteriville 
+https://fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin
+muodostetaan HTML missä lomake, jossa yksi tekstikenttä sekä talleta-nappi
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin->selain: status 200, css-tyylitiedosto, jossa HTML-sivun muotoilun määrittelyt
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+palvelin->selain: status 200, javascript-tiedosto, jossa javascript-koodi, joka lataa data.json tiedoston sisällön
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: status 200, json-tiedosto jossa lista muistiinpanoista
+
+note left of selain
+ selain näyttää palvelimen palauttaman HTML-näkymän
+ jossa yksi tekstikenttä sekä talleta-nappi sekä data.json sisältämät muistiinpanot listana
+end note
+
+kayttaja->selain:
+note left of selain
+kayttaja kirjoittaa tekstikenttään tekstin tööt ja painaa talleta-nappia
+end note
+
+selain->palvelin:POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+palvelin->selain:status 201 created, data.json lisätään content:"tööt2", date:"2018-01-16T18:07:39.163Z"
+
+note left of selain
+ selain lataa käyttäjän syöttämän tekstikentän sisällön listan viimeiseksi 
+end note
