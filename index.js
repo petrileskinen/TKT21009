@@ -2,13 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const Sisalto = (props) => {
-  const laske = [10,7,14,12]
-
-
   return (
     <div>
        {props.osat.map((osa)=><div key={osa.id}>{osa.nimi} {osa.tehtavia}</div>)}
-       Yhteensä: {laske.reduce(reducer)}
+       <div>Yhteensä: {props.osat.reduce((summa,osa)=>summa+osa.tehtavia,0)}</div>
     </div>
   )
  
