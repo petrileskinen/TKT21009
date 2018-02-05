@@ -2,11 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const Sisalto = (props) => {
+  const laske = [10,7,14,12]
+
+
   return (
     <div>
        {props.osat.map((osa)=><div key={osa.id}>{osa.nimi} {osa.tehtavia}</div>)}
+       Yhteensä: {laske.reduce(reducer)}
     </div>
   )
+ 
 }
 
 const Kurssi = (props) => {
@@ -14,6 +19,9 @@ const Kurssi = (props) => {
     <div>
       <h1>{props.kurssi.nimi}</h1>
       <Sisalto osat={props.kurssi.osat} />
+      <div>
+        
+      </div>
     </div>
   )
 }
