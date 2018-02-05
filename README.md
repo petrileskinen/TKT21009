@@ -3,7 +3,7 @@
 Full stack -websovelluskehitys (TKT21009) - 2018
 
 TEHTÄVÄ 2 
-Tehtävä 2.6
+Tehtävä 2.6 Jäi kesken
 Tehtävät 2.1-2.5 palautettu Branchiin Tehtävä-2.1-2.5
 
 
